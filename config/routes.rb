@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'welcome/example'
+
+  match '/example',    to: 'welcome#example',    via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
