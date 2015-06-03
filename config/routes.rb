@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'welcome/example'
 
   get 'signup' => 'users#new'
+
+  resources :users
   
   match '/example',    to: 'welcome#example',    via: 'get'
 
