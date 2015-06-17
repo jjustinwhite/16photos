@@ -5,7 +5,7 @@
 
         <h2>Sign Up</h2>
 
-    <%= form_for(@user) do |f| %>
+    <%= form_for(@user, html: { class: "directUpload" }) do |f| %>
     <%= render 'shared/error_messages' %>
     
       <div class="form-group">
@@ -26,6 +26,11 @@
       <div class="form-group">
         <%= f.label :password_confirmation, "Password Confirmation:", class: "control-label sr-only" %>
           <%= f.password_field :password_confirmation, class: "form-control", :placeholder => "Password Confirmation" %>
+      </div>
+
+      <div class="form-group">
+         <%= f.label :avatar_url, "Avatar URL:", class: "control-label sr-only" %>
+        <%= f.file_field :avatar_url %>
       </div>
 
       <%= f.submit "Create my account", class: "btn btn-primary col-xs-12" %>

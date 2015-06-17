@@ -1,17 +1,27 @@
-<div class="site-wrapper">
-  <div class="site-wrapper-inner">
 
-    <div class="cover-container">
+         
 
-      <div class="masthead clearfix">
-        <div class="inner">
-          <h3 class="masthead-brand">16photos</h3>
-          <nav>
-            <ul class="nav masthead-nav">
-              <li><a href="/">Home</a></li>
+         <!-- Static navbar -->
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">16photos</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+                          <li><a href="/">Home</a></li>
               <li><a href="/example">Example</a></li>
-              <li><a href="#">Contact</a></li>
-              <% if logged_in? %>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
                 <li><%= link_to "Users", '#' %></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -29,7 +39,9 @@
               <% else %>
                 <li><%= link_to "Log in", login_path %></li>
               <% end %>
-            </ul>
-          </nav>
-        </div>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
+    </nav>
+
+
