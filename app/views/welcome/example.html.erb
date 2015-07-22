@@ -8,7 +8,7 @@
 	<% 4.times do %>
 		<div class="row">
 			<% 4.times do %>
-				  <div class="col-xs-12 col-sm-3">
+				  <div class="col-xs-12 col-sm-3 image">
 				       <%= image_tag "#{@photo_index}.jpg", :class => "photogrid img-responsive"%>
 				       <% @photo_index = @photo_index + 1 %>
 				  </div>
@@ -16,6 +16,3 @@
 		</div>
 	<% end %>
 </div>
-
-
-
