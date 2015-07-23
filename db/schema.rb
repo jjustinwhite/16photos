@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150613005825) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
@@ -23,6 +26,6 @@ ActiveRecord::Schema.define(version: 20150613005825) do
     t.string   "avatar_url"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
