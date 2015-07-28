@@ -5,8 +5,11 @@
 					<p class="name"> User Name </p>
 				</div>
 				<%= image_tag @post.image.url(:medium), :class => "img-responsive center-block" %>
-				<p class="caption"><%= @post.caption %></p>
+				<p class="caption">
+					<%= @post.caption %>
+					<%= link_to "Back", posts_path, :class => "btn btn-primary pull-right" %> 
+					<%= link_to "Edit", edit_post_path(@post), :class => "btn btn-warning pull-right" %>
+				</p>
 			</div>
-			<%= link_to "Back", posts_path, :class => "btn btn-primary" %>
 		</div>
 </div>
