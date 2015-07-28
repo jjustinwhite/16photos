@@ -1,0 +1,7 @@
+<div class="container well">	
+	<%= simple_form_for(@post, html: { class: 'form-horizontal' }) do |f| %>
+	  <%= f.input :image %>
+	  <%= f.input :caption, placeholder: 'something about this photo' %>
+	  <%= f.button :submit, "Publish" %>
+	<% end %>
+</div>
