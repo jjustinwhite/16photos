@@ -1,0 +1,12 @@
+<div class="container well">
+		<div class="row posts-wrapper">
+			<div class="post">
+				<div class="post-head">
+					<p class="name"> User Name </p>
+				</div>
+				<%= image_tag @post.image.url(:medium), :class => "img-responsive center-block" %>
+				<p class="caption"><%= @post.caption %></p>
+			</div>
+			<%= link_to "Back", posts_path, :class => "btn btn-primary" %>
+		</div>
+</div>

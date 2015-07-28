@@ -43,15 +43,18 @@
 }
 
 .form-wrapper {
-  width: 60%;
+  width: 100%;
   margin: 20px auto;
-  background-color: #fff;
+
   padding: 40px;
-  border: 1px solid #eeefef;
-  border-radius: 3px;
+
 }
 
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+a {
+  color: #575D64;
 }
