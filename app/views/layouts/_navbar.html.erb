@@ -10,30 +10,31 @@
       <a class="navbar-brand" href="/">16photos</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">            
-          <li><%= link_to "Home", posts_path %></li>
-          <li><%= link_to "New Photo", new_post_path %></li>
-          </ul>
-        </li>
+      <ul class="nav navbar-nav">     
+        <% if logged_in? %>       
+            <li><%= link_to " Home", posts_path, :class => "fa fa-home" %></li>
+            <li><%= link_to " New Photo", new_post_path, :class => "fa fa-camera-retro" %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to " Users", users_path, :class => "fa fa-users" %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
+                <%= current_user.username %> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li><%= link_to " Profile", current_user, :class => "fa fa-user" %></li>
+                <li><%= link_to " Settings", edit_user_path(current_user), :class => "fa fa-gear" %></li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Log out", logout_path, method: "delete" %>
+                  <%= link_to " Log out", logout_path, method: "delete", :class => "fa fa-sign-out" %>
                 </li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Log in", login_path %></li>
+            <li><%= link_to " Sign up", signup_path, :class => "fa fa-arrow-circle-o-up" %></li>
+            <li><%= link_to " Log In", login_path, :class => "fa fa-sign-in" %></li>
           <% end %>
       </ul>
     </div><!--/.nav-collapse -->

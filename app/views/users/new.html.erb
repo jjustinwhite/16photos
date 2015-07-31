@@ -1,6 +1,6 @@
 <% provide(:title, 'Sign up') %>
 
-<div class="container col-sm-6 col-sm-offset-3">
+<div class="container col-sm-6 col-sm-offset-3 well">
 
     <h2>Sign Up</h2>
 
@@ -11,6 +11,9 @@
       <%= render 'form', f: f %>
 
       <%= f.submit "Create my account", class: "btn btn-primary col-xs-12" %>
+
+
+      <p> Already signed up? <%= link_to "Log In", login_path %></p>
 
     <% end %>
 
