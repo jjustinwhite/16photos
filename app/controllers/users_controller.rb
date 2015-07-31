@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
   	@user = User.new
   end
 
@@ -19,11 +18,16 @@ class UsersController < ApplicationController
   	end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
 
   private
 
   	def user_params
   		params.require(:user).permit(:username, :email, :password, :password_confirmation)
   	end
+    
 
 end

@@ -1,39 +1,17 @@
 <% provide(:title, 'Sign up') %>
 
-    <div class="container col-sm-6 col-sm-offset-3">
+<div class="container col-sm-6 col-sm-offset-3">
 
-
-        <h2>Sign Up</h2>
+    <h2>Sign Up</h2>
 
     <%= form_for(@user, html: { class: "directUpload" }) do |f| %>
-    <%= render 'shared/error_messages' %>
-    
-      <div class="form-group">
-        <%= f.label :username, "Username:", class: "control-label sr-only" %>
-        <%= f.text_field :username, class: "form-control", :placeholder => "Username" %>
-      </div> 
-
-      <div class="form-group">
-        <%= f.label :email, "Email:", class: "control-label sr-only" %>
-          <%= f.email_field :email, class: "form-control", :placeholder => "Email address" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password, "Password:", class: "control-label sr-only" %>
-          <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password_confirmation, "Password Confirmation:", class: "control-label sr-only" %>
-          <%= f.password_field :password_confirmation, class: "form-control", :placeholder => "Password Confirmation" %>
-      </div>
-
-      <div class="form-group">
-         <%= f.label :avatar_url, "Avatar URL:", class: "control-label sr-only" %>
-        <%= f.file_field :avatar_url %>
-      </div>
+      
+      <%= render 'shared/error_messages' %>
+      
+      <%= render 'form', f: f %>
 
       <%= f.submit "Create my account", class: "btn btn-primary col-xs-12" %>
+
     <% end %>
 
-    </div> <!-- /container -->
+</div> <!-- /container -->

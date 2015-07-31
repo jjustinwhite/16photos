@@ -1,0 +1,22 @@
+<% provide(:title, 'Sign up') %>
+
+<div class="container col-sm-6 col-sm-offset-3">
+
+    <h2>Edit Account</h2>
+
+    <%= form_for(@user) do |f| %>
+      
+	<%= render 'shared/error_messages' %>
+
+	<%= render 'form', f: f %>
+
+	<div class="gravatar_edit">
+		<%= gravatar_for @user %>
+		<a href="http://gravatar.com/emails" target="_blank" class="btn btn-warning">change</a>
+	</div>
+
+	<%= f.submit "Update Account Information", class: "btn btn-primary col-xs-12" %>
+
+	<% end %>
+
+</div> <!-- /container -->
