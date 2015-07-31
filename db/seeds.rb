@@ -11,3 +11,4 @@ User.create!(username:  "Foo Bar",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true)
+
