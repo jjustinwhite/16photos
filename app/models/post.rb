@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+	has_many :comments, dependent: :destroy
 	validates :user_id, presence: true  
 	belongs_to :user   
 

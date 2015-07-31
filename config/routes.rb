@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users
-  resources :posts
+  resources :posts do  
+    resources :comments
+  end 
   
   match '/example',    to: 'welcome#example',    via: 'get'
 

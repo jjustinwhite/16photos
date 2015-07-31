@@ -3,7 +3,40 @@
 		<div class="post-head">
 			<p class="name"><%= post.user.username %></p> 
 		</div>
-		<%= link_to (image_tag post.image.url(:medium), :class => "img-responsive center-block"), post_path(post) %>
-		<p class="caption"><%= post.caption %></p>
+		<div class="post-bottom">
+			<%= link_to (image_tag post.image.url(:medium), :class => "img-responsive center-block"), post_path(post) %>
+			<p class="caption">
+				<span class="user-name"><%= post.user.username %></span>
+				<%= post.caption %> <br />
+
+				<% if post.comments %>
+					<% post.comments.each do |comment| %>
+						<span class="user-name"><%= comment.user.username %></span>
+						<span class="comment-content">
+							<%= comment.content %> 
+							<% if comment.user == current_user %>
+								<%= link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } do %> 
+										<span class="glyphicon glyphicon-remove delete-comment pull-right"></span> <% end %> <br />
+							<% end %>
+						</span>
+					<% end %>
+				<% end %>
+
+				<div class="row comment-like-form" >
+
+				<div class="input-group">
+  					<span class="input-group-addon"><span class="glyphicon glyphicon-heart-empty"></span></span>
+  					<%= form_for [post, post.comments.new] do |f| %><%= f.text_field :content, placeholder: 'Add a comment...', :class => "form-control" %><% end %>
+  					
+				</div>
+					
+		
+				
+            				
+            			
+				</div>
+
+			</p>
+		</div>
 	</div>
 </div>
