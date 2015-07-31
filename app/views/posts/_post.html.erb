@@ -1,42 +1,37 @@
 <div class="row posts-wrapper">
 	<div class="post">
+
 		<div class="post-head">
-			<p class="name"><%= post.user.username %></p> 
+			<p class="name">
+				<%= post.user.username %>		
+				<span class="time-ago pull-right"><%= time_ago_in_words post.created_at %></span>
+			</p> 
 		</div>
+
 		<div class="post-bottom">
 			<%= link_to (image_tag post.image.url(:medium), :class => "img-responsive center-block"), post_path(post) %>
-			<p class="caption">
-				<span class="user-name"><%= post.user.username %></span>
-				<%= post.caption %> <br />
 
-				<% if post.comments %>
-					<% post.comments.each do |comment| %>
-						<span class="user-name"><%= comment.user.username %></span>
-						<span class="comment-content">
-							<%= comment.content %> 
-							<% if comment.user == current_user %>
-								<%= link_to post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } do %> 
-										<span class="glyphicon glyphicon-remove delete-comment pull-right"></span> <% end %> <br />
-							<% end %>
-						</span>
+			<div class="caption">
+				<div class="caption-content">
+					<span class="user-name"><%= post.user.username %></span>
+					<%= post.caption %> <br />
+				</div>
+				<div id="comments_#{post.id}">
+					<% if post.comments %>
+						<%= render post.comments, post: post %>
 					<% end %>
-				<% end %>
+				</div>
 
 				<div class="row comment-like-form" >
-
-				<div class="input-group">
-  					<span class="input-group-addon"><span class="glyphicon glyphicon-heart-empty"></span></span>
-  					<%= form_for [post, post.comments.new] do |f| %><%= f.text_field :content, placeholder: 'Add a comment...', :class => "form-control" %><% end %>
-  					
+					<div class="input-group">
+	  					<a href="#" class="input-group-addon"><i class="fa fa-heart-o"></i></a>
+	  					<%= form_for([post, post.comments.build], remote: true) do |f| %>
+	  						<%= f.text_field :content, placeholder: 'Add a comment...', :class => "form-control", id: 'comment_content_#{post.id}' %>
+	  					<% end %>
+					</div>
 				</div>
-					
-		
-				
-            				
-            			
-				</div>
-
-			</p>
+			</div>
 		</div>
+
 	</div>
 </div>
