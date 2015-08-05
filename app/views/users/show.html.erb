@@ -1,13 +1,17 @@
 <div class="container well col-sm-8 col-sm-offset-2 ">
 <% provide(:title, @user.username) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.username %> <small><%= @user.email %></small>
-  <%= image_tag @user.avatar_url %> <hr />
+	<h1>
+	  <%= gravatar_for @user %>
+	  <%= @user.username %> <small><%= @user.email %></small>
+	  <%= image_tag @user.avatar_url %>
+	</h1> <hr />
 
 	<div class="row">
-		<%= render 'posts' %>
-	</div>
+		<%= render 'posts' %>	
+		<div class="col-xs-3" id="userphotos">
+		<%= link_to (image_tag "newphoto.png", :class => "img-responsive img-rounded"), new_post_path %>
+		</div>
+	</div> <br />
 
-</h1>
-</div>
+
+</div> 
