@@ -3,8 +3,12 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy  
 	attr_accessor :remember_token
 	before_save { self.email = email.downcase }
+
+  VALID_USERNAME_REGEX = /\A[a-z0-9]+\z/i
 	validates :username, 	presence: true, length: { maximum: 20  },
+            format: { with: VALID_USERNAME_REGEX },
 							uniqueness: { case_sensitive: false }
+
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, 		presence: true, length: { maximum: 255 },
