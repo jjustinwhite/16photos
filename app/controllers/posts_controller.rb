@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 	before_action :owned_post, only: [:edit, :update, :destroy]  
 
 	def index
-		@posts = Post.paginate(:page => params[:page], :per_page => 5)
+		@posts = Post.paginate(:page => params[:page], :per_page => 5).reverse_order
+		
 	end
 
 	def new
