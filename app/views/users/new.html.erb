@@ -4,16 +4,16 @@
 
     <h2>Sign Up</h2>
 
-    <%= form_for(@user, html: { class: "directUpload" }) do |f| %>
+    <%= form_for(@user, html: { class: "form-horizontal" }) do |f| %>
       
       <%= render 'shared/error_messages' %>
       
       <%= render 'form', f: f %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary col-xs-12" %>
+      <%= f.submit "Create my account", class: "btn btn-primary col-sm-10 col-sm-offset-2 col-xs-12" %> <br /> <br />
 
 
-      <p> Already signed up? <%= link_to "Log In", login_path %></p>
+      <p class="pull-right"> Already signed up? <%= link_to "Log In", login_path %></p>
 
     <% end %>
 
