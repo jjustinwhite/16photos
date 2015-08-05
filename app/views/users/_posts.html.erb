@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+	<div class="col-xs-3">
+		<%= link_to (image_tag post.image.url(:thumb), :class => "img-responsive center-block"), post_path(post) %>
+	</div>
+<% end %>

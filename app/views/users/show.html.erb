@@ -3,6 +3,13 @@
 <h1>
   <%= gravatar_for @user %>
   <%= @user.username %> <small><%= @user.email %></small>
-  <%= image_tag @user.avatar_url %>
+  <%= image_tag @user.avatar_url %> <hr />
+
+	<div class="row">
+		<%= render 'posts' %>
+	</div>
+
+
+
 </h1>
 </div>

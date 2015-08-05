@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'welcome/index'
   get 'welcome/example'
+  get "/show_posts" => "users#show_posts"
 
   get    'signup' => 'users#new'
   get    'login'  => 'sessions#new'
