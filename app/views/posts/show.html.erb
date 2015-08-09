@@ -2,7 +2,7 @@
 	<%= render @post %>
 
 	<%= link_to "Back", posts_path, :class => "btn btn-primary pull-right" %> 
-	<% if @post.user.id == current_user.id %>
+	<% if logged_in? && @post.user.id == current_user.id %>
 		<%= link_to "Edit", edit_post_path(@post), :class => "btn btn-warning pull-right" %>
 	<% end %>
 </div>
