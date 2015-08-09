@@ -1,20 +1,24 @@
 <div class="container well col-sm-8 col-sm-offset-2 ">
 <% provide(:title, @user.username) %>
+
+
+<div class="col-lg-4">
 	<h1>
 	  <%= gravatar_for @user %>
-	  <%= @user.username %> <small><%= @user.email %></small>
+	  <%= @user.username %>
 	  <%= image_tag @user.avatar_url %>
 	</h1> <hr />
+</div>
 
-	<div class="row">
-		<% if current_user?(@user) %>
-			<div class="col-xs-3" id="userphotos">
-				<%= link_to (image_tag "newphoto.png", :class => "img-responsive img-rounded"), new_post_path %>
-			</div>
-		<% end %>
+<div class="col-lg-8">
+	<%= render 'photogrid' %>
+</div>
 
-		<%= render 'posts' %>	
-	</div> <br />
+
+
+
+
+
 
 
 </div> 

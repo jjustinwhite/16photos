@@ -9,13 +9,19 @@
 		</div>
 
 		<div class="post-bottom">
-			<%= link_to (image_tag post.image.url(:medium), :class => "img-responsive center-block"), post_path(post) %>
+			<% if (params[:action] == 'index') %>
+				<%= link_to (image_tag post.image.url(:medium), :class => "img-responsive center-block"), post_path(post) %>
+			<% else %>
+				<%= link_to (image_tag post.image.url(:medium), :class => "img-responsive center-block"), post.image.url, :target => "_blank" %>
+			<% end %>
 
 			<div class="caption">
+			<% if post.caption.length > 1 %>
 				<div class="caption-content">
 					<span class="user-name"><%= post.user.username %></span>
 					<%= post.caption %> <br />
 				</div>
+			<% end %>
 				<div id="comments_#{post.id}">
 					<% if post.comments %>
 						<%= render post.comments, post: post %>

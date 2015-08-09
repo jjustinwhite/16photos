@@ -1,0 +1,9 @@
+	<div class="row">
+		<% if current_user?(@user) %>
+			<div class="col-xs-3" id="userphotos">
+				<%= link_to (image_tag "newphoto.png", :class => "img-responsive img-rounded"), new_post_path %>
+			</div>
+		<% end %>
+
+		<%= render 'posts' %>	
+	</div> <br />
