@@ -1,30 +1,27 @@
+<%= simple_form_for(Post.new, html: { class: 'form-horizontal', multipart:true }) do |f| %>
+	<div class="form-group center">
+		<div class="fileinput fileinput-new" data-provides="fileinput">
+			  <div class="fileinput-new thumbnail" id="photoicon" style="width: 250px; height: 250px;">
+			    <i class="fa fa-picture-o fa-5x"></i>
+			  </div>
+				<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 250px;"></div>
 
-		<%= simple_form_for(Post.new, html: { class: 'form-horizontal', multipart:true }) do |f| %>
-
-		<div class="form-group center">
-			<div class="fileinput fileinput-new" data-provides="fileinput">
-				  <div class="fileinput-new thumbnail" id="photoicon" style="width: 250px; height: 250px;">
-				    <i class="fa fa-picture-o fa-5x"></i>
-				  </div>
-	  			<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 250px;"></div>
-
-				  <div>
-				    <span class="btn btn-default btn-file col-sm-12">
-				    	<span class="fileinput-new"><i class="fa fa-camera"></i> Select Image</span>
-				    	<span class="fileinput-exists">Change</span>
-				    		<input class="file required" type="file" name="post[image]" id="post_image">
-				    	</span>
-				    	<a href="#" class="btn btn-danger fileinput-exists col-sm-12" data-dismiss="fileinput">Remove</a> 
-				  </div>
-			</div>
+			  <div>
+			    <span class="btn btn-default btn-file col-sm-12">
+			    	<span class="fileinput-new"><i class="fa fa-camera"></i> Select Image</span>
+			    	<span class="fileinput-exists">Change</span>
+			    		<input class="file required" type="file" name="post[image]" id="post_image">
+			    	</span>
+			    	<a href="#" class="btn btn-danger fileinput-exists col-sm-12" data-dismiss="fileinput">Remove</a> 
+			  </div>
 		</div>
+	</div>
 
-		<div class="form-group">
-		  <%= f.text_area :caption, :class => 'form-control', placeholder: 'something about this photo' %>
-		</div>
+	<div class="form-group">
+	  <%= f.text_area :caption, :class => 'form-control', placeholder: 'something about this photo' %>
+	</div>
 
-		<div class="form-group text-center">
-		  <%= f.button :submit, :class => 'btn-success' %>
-		</div>
-
-		<% end %>
+	<div class="form-group text-center">
+	  <%= f.button :submit, :class => 'btn-success col-sm-12' %>
+	</div>
+<% end %>
