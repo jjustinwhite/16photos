@@ -1,0 +1,14 @@
+<h1>16photos</h1>
+
+<p>Hello <%= @user.username %>,</p>
+
+<p>
+	Welcome to 16photos! Thank you for signing up. Please click on the link below to verify your account.
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
+
+<p>Thank you!</p>
+
+<p>16photos</p>
