@@ -13,31 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@media (min-width: 601px) {
-  body#siteBackground {
-    background: url(http://i.imgur.com/vYqEM1H.jpg) no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      background-attachment: fixed;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .html-mobile-background {      
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 110%; /* To compensate for mobile browser address bar space */
-    background: url(http://i.imgur.com/2rFk5K9.png) no-repeat; 
-    background-size: cover;
-  }
-}
-
-
 
 
 /*
