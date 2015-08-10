@@ -1,4 +1,4 @@
-<span class="user-name"><%= comment.user.username %></span>
+<span class="user-name"><%= link_to comment.user.username, comment.user %></span>
 <span class="comment-content">
 	<%= comment.content %> 
 	<% if comment.user == current_user %>

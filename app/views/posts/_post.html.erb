@@ -19,7 +19,7 @@
 			<div class="caption">
 			<% if post.caption.length > 1 %>
 				<div class="caption-content">
-					<span class="user-name"><%= post.user.username %></span>
+					<span class="user-name"><%= link_to post.user.username, post.user %></span>
 					<%= post.caption %> <br />
 				</div>
 			<% end %>
