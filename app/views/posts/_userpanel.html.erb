@@ -1,0 +1,20 @@
+<% if logged_in? %> 
+	<div class="container col-md-4 col-lg-offset-1 col-lg-3" id="userpanel">
+		<div class="well">
+			<h1><small><%= gravatar_for current_user, size: 60 %> <%= link_to current_user.username, current_user %></small></h1>
+			<ul class="list-inline center">
+				<li>Posts <br /> <%= current_user.posts.count %></li>
+				<li>Followers <br /> #</li>
+				<li>Following <br /> #</li>
+			</ul>
+			<hr />
+			<span class="hidden-sm hidden-xs"><%= render "form" %></span>
+		</div>
+	</div>
+<% else %>
+	<div class="container col-md-4" id="userpanel">
+		<div class="well">
+			<%= render "sessions/login" %> <br /> <br /> <br /> <br />
+		</div>
+	</div>
+<% end %>

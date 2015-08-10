@@ -1,8 +1,9 @@
 <div class="container well">
 	<%= render @post %>
-
-	<%= link_to "Back", posts_path, :class => "btn btn-primary pull-right" %> 
-	<% if logged_in? && @post.user.id == current_user.id %>
-		<%= link_to "Edit", edit_post_path(@post), :class => "btn btn-warning pull-right" %>
-	<% end %>
+	<ul class="list-inline pull-right">
+		<li><%= link_to "Back", posts_path, :class => "btn btn-primary" %></li>
+		<% if logged_in? && @post.user.id == current_user.id %>
+			<li><%= link_to "Edit", edit_post_path(@post), :class => "btn btn-warning" %></li>
+		<% end %>
+	</ul>
 </div>

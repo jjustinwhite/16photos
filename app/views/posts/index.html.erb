@@ -1,4 +1,8 @@
-<div class="container  col-sm-8  col-sm-offset-2 well">
-	<%= render @posts %>
-	<div class="pull-right"><%= will_paginate %></div>
+<%= render "userpanel" %>
+
+<div class="container col-md-8 col-lg-7">
+	<div class="well">
+		<%= render @posts %>
+		<div class="pull-right"><%= will_paginate %></div>
+	</div>
 </div>

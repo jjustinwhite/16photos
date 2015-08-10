@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 	validates :user_id, presence: true  
-	belongs_to :user   
+	belongs_to :user  
+	default_scope -> { order(created_at: :desc) } 
 
 	validates :image, presence: true
 

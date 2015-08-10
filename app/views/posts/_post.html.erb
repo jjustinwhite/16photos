@@ -3,7 +3,8 @@
 
 		<div class="post-head">
 			<p class="name">
-				<%= post.user.username %>		
+				<%=  gravatar_for post.user, size: 25 %>
+				<%= link_to post.user.username, post.user %> 	
 				<span class="time-ago pull-right"><%= time_ago_in_words post.created_at %></span>
 			</p> 
 		</div>
