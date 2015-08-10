@@ -1,0 +1,14 @@
+<div class="container col-md-4 col-lg-offset-1 col-lg-3" id="userpanel">
+	<div class="well">
+		<h1><small><%= gravatar_for @user, size: 60 %> <%= @user.username %></small></h1>
+		<ul class="list-inline center">
+			<li>Posts <br /> <%= @user.posts.count %></li>
+			<li>Followers <br /> #</li>
+			<li>Following <br /> #</li>
+		</ul>
+		<hr />
+		<% if current_user == @user %>
+			<span class="hidden-sm hidden-xs"><%= render "posts/form" %></span>
+		<% end %>
+	</div>
+</div>
